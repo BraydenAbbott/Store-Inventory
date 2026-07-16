@@ -1,0 +1,104 @@
+import random
+ 
+def display_menu():
+  print(
+    """
+    1. View Inventory
+    2. Add Product
+    3. Remove Product
+    4. Exit
+    """
+  )
+ 
+def user_selection():
+  display_menu()
+  user_input = int(input('Choose:'))
+ 
+  if user_input == 1:
+    print('View Inventory')
+    display_inventory(inventory)
+  elif user_input == 2:
+    print('Add product')
+    add_new_product(inventory)
+  elif user_input == 3:
+    print('Remove product')
+    remove_product(inventory)
+  else:
+    print('Exit')
+    return False
+ 
+  return True
+ 
+ 
+def add_new_product(inventory):
+    product_type = input('What product would you like to store:')
+   
+    try:
+        price = float(input('What is the price of the product?:'))
+    except ValueError:
+        print('That is not a number!')
+        price = 0.0
+       
+    try:
+        total = int(input('What is the quantity of the product?:'))
+    except ValueError:
+        print('That is not a number!')
+        total = 0
+       
+    prod_id = random.randint(1000, 5000)
+    new_product_instance = Product(product_type, price, total)
+    inventory[prod_id] = new_product_instance
+    print(f'{product_type} with id {prod_id}')
+ 
+
+def display_inventory(inventory):
+  for k, v in inventory.items():
+    print(f'ID: {k} -> {v.name}')
+ 
+ 
+ 
+ 
+def remove_product(inventory):
+    display_inventory(inventory)
+   
+    try:
+        user_input = int(input('What item to remove'))
+       
+        if inventory[user_input]:
+            del inventory[user_input]
+        else:
+            print('ID not found')
+    except Exception:
+        print('Not a valid input.')
+       
+ 
+class Product:
+   def __init__(self, name, price, quantity):
+     self.name = name
+     self.price = price
+     self.quantity = quantity
+     self.prodId = random.randint(1000, 5000)
+ 
+   def features(self):
+     return {
+       'prod_id': self.prodId,
+       'name': self.name,
+       'price': self.price,
+       'quantity': self.quantity
+     }
+ 
+ 
+inventory = {
+  1: Product('Hat', 5, 30),
+  2: Product('Dog Food', 15, 30)
+}
+ 
+   
+game_loop = True
+while game_loop:
+  game_loop = user_selection()
+ 
+ 
+add_new_product(inventory)
+display_inventory(inventory)
+display_inventory(inventory)
