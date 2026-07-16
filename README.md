@@ -1,12 +1,11 @@
 Store Inventory
-Description (one sentence)
+Description 
 An inventory system that utillizes OOP fundamentals, inheritence, and error handling.
 Tools/Skills
 -Python
 -Object Oriented Programming
 -Inheritence
-Quick demo or video
-Purpose (why you wanted to do this project?)
+Purpose 
 To showcase technical ability, implementation, and error handling through a project that is relevant to real world operations.
 Challenges
 -The program had many indenting and syntax errors
@@ -15,4 +14,8 @@ Challenges
 Solutions
 -Concisely analyzed code to find indentation issues
 -implemented return statements
-Features (optional)
+Features 
+1. Adding Items to inventory
+2. Viewing inventory items
+3. removing inventory items
+4. exiting when needed
