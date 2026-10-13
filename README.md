@@ -1,33 +1,19 @@
-# Store Inventory
+# Store Inventory Management System (CLI)
 
-## Description
+##  Project Overview
+A robust Command-Line Interface (CLI) tool designed to manage product stock levels, pricing, and unique identifiers. This application demonstrates core software engineering principles including Object-Oriented Design and persistent data state management.
 
-An inventory system that utilizes OOP fundamentals, inheritance, and error handling.
+## Technical Competencies
+*   **Language:** Python 3
+*   **Core Concepts:** Object-Oriented Programming (OOP), Inheritance, Data Structures (Dictionaries).
+*   **Stability:** Error Exception Handling (`try/except` blocks).
 
-## Tools/Skills
+##  Key Features
+*   **Object-Oriented Architecture:** Utilized a custom `Product` class to encapsulate attributes (ID, Price, Quantity) for modular data handling.
+*   **Robust Input Validation:** Engineered `try/except` logic to intercept invalid user inputs (e.g., non-numeric characters) and prevent runtime crashes.
+*   **Dynamic CRUD Operations:** Implements logic to Add, View, and Remove products from the active inventory dictionary in real-time.
+*   **Persistent Command Loop:** Designed a `while` loop structure to maintain the application state until the user explicitly terminates the session.
 
-* Python
-* Object-Oriented Programming
-* Inheritance
-
-## Purpose
-
-To showcase technical ability, implementation, and error handling through a project that is relevant to real-world operations.
-
-## Challenges
-
-* The program had many indentation and syntax errors.
-* The inventory had ID errors.
-* The system would loop infinitely.
-
-## Solutions
-
-* Concisely analyzed the code to find indentation issues.
-* Implemented return statements.
-
-## Features
-
-* Adding items to inventory.
-* Viewing inventory items.
-* Removing inventory items.
-* Exiting when needed.
+##  Optimization & Problem Solving
+*   **Input Sanitization:** Addressed potential `ValueError` crashes by wrapping integer conversion inputs in exception handlers.
+*   **Data Integrity:** Implemented logic to ensure product IDs are unique keys within the inventory dictionary to prevent data overwrites.
